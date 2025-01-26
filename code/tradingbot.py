@@ -72,7 +72,7 @@ class TradingBot:
         model.add(Dense(2, activation='linear'))
         model.compile(
             loss='mse',
-            optimizer=keras.optimizers.legacy.RMSprop(learning_rate=lr)
+            optimizer=tf.keras.optimizers.legacy.RMSprop(learning_rate=lr)
         )
         return model
 
