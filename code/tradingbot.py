@@ -13,8 +13,6 @@ from collections import deque
 import tensorflow as tf
 from tensorflow import keras
 
-from tensorflow.python.framework.ops import disable_eager_execution
-disable_eager_execution()
 
 from keras.layers import Dense, Dropout
 from keras.models import Sequential
@@ -72,7 +70,7 @@ class TradingBot:
         model.add(Dense(2, activation='linear'))
         model.compile(
             loss='mse',
-            optimizer=keras.optimizers.legacy.RMSprop(learning_rate=lr)
+            optimizer=keras.optimizers.RMSprop(learning_rate=lr)
         )
         return model
 
